@@ -1,3 +1,5 @@
+import subprocess
+
 def VersionValue(val):
     """Function for comparing version values
 
@@ -12,3 +14,7 @@ def VersionValue(val):
         return int(str(NewVal+"0"))
     elif len(NewVal) == 3:
         return int(str(NewVal))
+
+def run(cmd):
+    completed = subprocess.run(["powershell", "-Command", cmd], capture_output=False)
+    return completed
