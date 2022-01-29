@@ -27,7 +27,7 @@ class Main:
         global RootExists; global e1; global e2
         RootExists = UpdateVersion(parent)
         tk.Button(parent, text = "Check for updates", fg = "#ffffff", bg = "#121212", command = lambda: UpdateVersion(parent), padx = 5).place(x = 405, y = 92)
-        # self.MainOptions()
+        
         def Entry():
             global SourceDir; global TargetDir
             global e1; global e2

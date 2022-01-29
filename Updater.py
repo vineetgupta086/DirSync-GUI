@@ -6,8 +6,8 @@ def UpdateVersion(root = None):
     """Compares the current version and latest version of the program.
     """
     RootExists = True
-    ProgVersion = requests.get("https://raw.githubusercontent.com/vineetgupta086/DirSync-GUI/main/VERSION").text
-    
+    ProgVersion = utils.FindInText("VERSION",requests.get("https://raw.githubusercontent.com/vineetgupta086/DirSync-GUI/main/source/TEXTDATA").text)
+
     try:
         MyVersion = utils.FindFromFile("VERSION", "source/TEXTDATA")
     except Exception as e:
@@ -17,7 +17,7 @@ def UpdateVersion(root = None):
             print(f"Installing DirSync v{ProgVersion}")
         elif response == "cancel":
             pass
-    print(f"{MyVersion} & {ProgVersion}")
+    # print(f"{MyVersion} & {ProgVersion}")
     if utils.VersionValue(MyVersion) < utils.VersionValue(ProgVersion):
         # update needed
         # MyMsg = f"DirSync-GUI v{ProgVersion} available. Do you want to update?\nClick 'Yes' to go the repository for latest version."
