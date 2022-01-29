@@ -1,0 +1,18 @@
+VERSION: 1.0
+
+DOCUMENTARY:
+--diff, -d              Only report difference between sourcedir and targetdir
+--sync, -s              Synchronize content between sourcedir and targetdir
+--update, -u            Update existing content between sourcedir and targetdir
+--verbose, -v           Provide verbose output
+--purge, -p             Purge files when synchronizing (does not purge by\ndefault)
+--force, -f             Force copying of files, by trying to change file\npermissions
+--twoway, -2            Update files in source directory from target\ndirectory (only updates target from source by default)
+--create, -c            Create target directory if it does not exist (By\ndefault, target directory should exist.)
+--ctime                 Also takes into account the source file\'s creation\ntime (Windows) or the source file\'s last metadata\nchange (Unix)
+--content               Takes into account ONLY content of files. \nSynchronize ONLY different files.\nAt two-way synchronization source files content \nhave priority if destination and source are existed
+--ignore, -x patterns   Regex patterns to ignore
+--only, -o patterns     Regex patterns to include (exclude every other)
+--exclude, -e patterns  Regex patterns to exclude
+--include, -i patterns  Regex patterns to include (with precedence over excludes)
+
